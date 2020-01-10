@@ -1,17 +1,4 @@
-<ion-header no-border>
-  <ion-toolbar mode="ios">
-	<ion-buttons slot="end">
-		<ion-back-button>Back</ion-back-button>
-	</ion-buttons>
-    <ion-title>
-      View Item
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-	<app-item-detail>Hello</app-item-detail>
-	<!--
+<div *ngIf="item">
 	<ion-fab vertical="top" horizontal="end" slot="fixed">
 		<ion-fab-button>
 		  <ion-icon name="create" (click)="editItem()"></ion-icon>
@@ -19,6 +6,11 @@
 	</ion-fab>
 	<form onsubmit="processForm(event)">
 		<ion-list>
+			<ion-item>
+				<ion-label position="stacked">Title <ion-text color="danger">*</ion-text></ion-label>
+				<ion-input required type="text" [(ngModel)]="item.title" disabled name="title"></ion-input>
+			</ion-item>
+			<!-- continue -->
 			<ion-item>
 				<ion-img [src]="item.thumbnail"></ion-img>
 			</ion-item>
@@ -56,5 +48,4 @@
 			
 		</ion-list>
 	</form>
-	-->
-</ion-content>
+</div>

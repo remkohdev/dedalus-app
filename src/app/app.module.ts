@@ -7,20 +7,25 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
   declarations: [
-	  AppComponent
+	AppComponent
   ],
   entryComponents: [],
   exports: [
   ],
   imports: [
 	  BrowserModule,
+	  FormsModule,
 	  IonicModule.forRoot(),
 	  AppRoutingModule,
 	  IonicStorageModule.forRoot()
