@@ -1,0 +1,58 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+	<ion-buttons slot="end">
+		<ion-back-button>Back</ion-back-button>
+	</ion-buttons>
+    <ion-title>
+      View Item
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-fab vertical="top" horizontal="end" slot="fixed">
+		<ion-fab-button>
+		  <ion-icon name="create" (click)="editItem()"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+	<form onsubmit="processForm(event)">
+		<ion-list>
+			<ion-item>
+				<ion-img [src]="item.thumbnail"></ion-img>
+			</ion-item>
+			<ion-item>
+				<ion-label position="stacked">Date <ion-text color="danger">*</ion-text></ion-label>
+				<ion-input required type="text" value="{{ item.published.month + ' ' + item.published.day + ', ' + item.published.year }}" disabled></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label position="stacked">Title <ion-text color="danger">*</ion-text></ion-label>
+				<ion-input required type="text" value="{{ item.title }}" disabled></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label position="stacked">Subtitle</ion-label>
+				<ion-input required type="text" value="{{ item.subtitle }}" disabled></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label position="stacked">With</ion-label>
+				<ion-input required type="text" value="{{ item.persons }}" disabled></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label position="stacked">Topics</ion-label>
+				<ion-input required type="text" value="{{ item.topics }}" disabled></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label position="stacked">Text</ion-label>
+				<ion-textarea 
+					disabled
+					readonly
+					value="{{ item.text }}">
+				</ion-textarea>
+			</ion-item>
+			
+		</ion-list>
+	</form>
+
+</ion-content>

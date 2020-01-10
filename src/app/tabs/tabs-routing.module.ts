@@ -8,12 +8,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'feed',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../feed/feed.module').then(m => m.FeedPageModule)
           }
         ]
       },
@@ -36,17 +36,27 @@ const routes: Routes = [
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }
         ]
+	  },
+      {
+        path: 'view-item/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../item/view-item/view-item.module').then(m => m.ViewItemPageModule)
+          }
+        ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/feed',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/feed',
     pathMatch: 'full'
   }
 ];
@@ -55,4 +65,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class TabsPageRoutingModule {}
