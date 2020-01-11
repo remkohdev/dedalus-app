@@ -8,7 +8,7 @@
 		<ion-list>
 			<ion-item>
 				<ion-label position="stacked">Title <ion-text color="danger">*</ion-text></ion-label>
-				<ion-input required type="text" [(ngModel)]="item.title" disabled name="title"></ion-input>
+				<ion-input required type="text" [(ngModel)]="item.title" [disabled]="!isEdit" name="title"></ion-input>
 			</ion-item>
 			<!-- continue -->
 			<ion-item>
