@@ -15,4 +15,7 @@
 * Decorator pattern, https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841#.x5c2ndtx0
 * Intro to Modules, https://angular.io/guide/architecture-modules
 * Services as DI, https://angular.io/guide/architecture
-* 
+
+
+Sample code:
+https://stackblitz.com/

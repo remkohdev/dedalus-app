@@ -7,45 +7,43 @@
 	<form onsubmit="processForm(event)">
 		<ion-list>
 			<ion-item>
-				<ion-label position="stacked">Title <ion-text color="danger">*</ion-text></ion-label>
-				<ion-input required type="text" [(ngModel)]="item.title" [disabled]="!isEdit" name="title"></ion-input>
-			</ion-item>
-			<!-- continue -->
-			<ion-item>
-				<ion-img [src]="item.thumbnail"></ion-img>
+				<ion-img [src]="item.thumbnail" [disabled]="!isEdit" name="thumbnail"></ion-img>
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Date <ion-text color="danger">*</ion-text></ion-label>
-				<ion-input required type="text" value="{{ item.published.month + ' ' + item.published.day + ', ' + item.published.year }}" disabled></ion-input>
+				<ion-input required type="text" value="{{ item.published.month + ' ' + item.published.day + ', ' + item.published.year }}" [disabled]="!isEdit" name="published"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Title <ion-text color="danger">*</ion-text></ion-label>
-				<ion-input required type="text" value="{{ item.title }}" disabled></ion-input>
+				<ion-input required type="text" [(ngModel)]="item.title" [disabled]="!isEdit" name="title"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Subtitle</ion-label>
-				<ion-input required type="text" value="{{ item.subtitle }}" disabled></ion-input>
+				<ion-input required type="text" value="{{ item.subtitle }}" [disabled]="!isEdit" name="subtitle"></ion-input>
 			</ion-item>
 
 			<ion-item>
 				<ion-label position="stacked">With</ion-label>
-				<ion-input required type="text" value="{{ item.persons }}" disabled></ion-input>
+				<ion-input required type="text" value="{{ item.persons }}" [disabled]="!isEdit" name="with"></ion-input>
 			</ion-item>
 
 			<ion-item>
 				<ion-label position="stacked">Topics</ion-label>
-				<ion-input required type="text" value="{{ item.topics }}" disabled></ion-input>
+				<ion-input required type="text" value="{{ item.topics }}" [disabled]="!isEdit" name="topics"></ion-input>
 			</ion-item>
 
 			<ion-item>
 				<ion-label position="stacked">Text</ion-label>
 				<ion-textarea 
-					disabled
+					[disabled]="!isEdit" name="text"
 					readonly
 					value="{{ item.text }}">
 				</ion-textarea>
 			</ion-item>
 			
+			<ion-item>
+				<ion-button full round *ngIf="isEdit" (click)="saveItem(item)">Save</ion-button>
+			</ion-item>
 		</ion-list>
 	</form>
 </div>

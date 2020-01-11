@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Item } from '../../components/item';
+import { Item, PublishedDate } from '../../components/item';
 
 import { ITEMS } from './mock-items';
 
@@ -11,6 +11,7 @@ export class ItemsService {
   items: Item[] = ITEMS;
 
   constructor() {
+	  console.log(this.items);
   }
 
   getItems(): any[] {
@@ -18,7 +19,10 @@ export class ItemsService {
   }
 
   getItem(id: any): any {
-    const filteredItem = this.items.filter( item => item.id === id)[0];
+	console.log(`items.service.getItem for ${id}`);
+	const filteredItem = this.items.filter( item => item.id == id)[0];
+	console.log(`items.service.filteredItem:`);
+	console.log(filteredItem);
     return filteredItem;
   }
 
