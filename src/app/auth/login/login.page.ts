@@ -24,6 +24,6 @@ export class LoginPage implements OnInit {
     this.goHome();
   }
   goHome() {
-    this.router.navigateByUrl( 'tabs/tab3' );
+    this.router.navigateByUrl( 'tabs/profile' );
   }
 }
