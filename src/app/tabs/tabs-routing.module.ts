@@ -37,6 +37,16 @@ const routes: Routes = [
           }
         ]
 	  },
+	  {
+        path: 'new-item',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../item/view-item/view-item.module').then(m => m.ViewItemPageModule)
+          }
+        ]
+      },
       {
         path: 'view-item/:id',
         children: [

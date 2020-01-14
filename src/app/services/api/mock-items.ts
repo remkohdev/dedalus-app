@@ -18,7 +18,8 @@ export const ITEMS: Item[] = [
 		  'opera'
 		],
 		published: {
-		  month: 'January',
+		  monthName: 'January',
+		  month: 0,
 		  day: 3,
 		  year: 2020
 		},
@@ -42,7 +43,8 @@ export const ITEMS: Item[] = [
 		'nature'
 	  ],
 	  published: {
-		month: 'January',
+		monthName: 'January',
+		month: 0,
 		day: 2,
 		year: 2020
 	  },
@@ -66,7 +68,8 @@ export const ITEMS: Item[] = [
 		'tech', 'machine learning', 'virtual reality'
 	  ],
 	  published: {
-		month: 'January',
+		monthName: 'January',
+		month: 0,
 		day: 11,
 		year: 2020
 	  },

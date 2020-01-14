@@ -9,7 +9,7 @@
 <ion-content>
     <ion-fab vertical="top" horizontal="end" slot="fixed">
 		<ion-fab-button>
-		  <ion-icon name="add" (click)="addItem()"></ion-icon>
+		  <ion-icon name="add" routerLink="/tabs/new-item"></ion-icon>
 		</ion-fab-button>
 	</ion-fab>
 
@@ -25,7 +25,7 @@
 			<ion-grid>
 			  <ion-row>
 				<ion-col size="3"  class="date-label">
-				  <ion-row class="date-label-month">{{ item.published.month }}</ion-row>
+				  <ion-row class="date-label-month">{{ item.published.monthName }}</ion-row>
 				  <ion-row class="date-label-day">{{ item.published.day }}</ion-row>
 				  <ion-row class="date-label-year">{{ item.published.year }}</ion-row>
 				</ion-col>

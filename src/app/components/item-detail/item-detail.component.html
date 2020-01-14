@@ -11,7 +11,7 @@
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Date <ion-text color="danger">*</ion-text></ion-label>
-				<ion-input required type="text" value="{{ item.published.month + ' ' + item.published.day + ', ' + item.published.year }}" [disabled]="!isEdit" name="published"></ion-input>
+				<ion-input required type="text" value="{{ item.published.monthName + ' ' + item.published.day + ', ' + item.published.year }}" [disabled]="!isEdit" name="published"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Title <ion-text color="danger">*</ion-text></ion-label>
@@ -19,17 +19,27 @@
 			</ion-item>
 			<ion-item>
 				<ion-label position="stacked">Subtitle</ion-label>
-				<ion-input required type="text" value="{{ item.subtitle }}" [disabled]="!isEdit" name="subtitle"></ion-input>
+				<ion-input required type="text" [(ngModel)]="item.subtitle" [disabled]="!isEdit" name="subtitle"></ion-input>
 			</ion-item>
 
 			<ion-item>
 				<ion-label position="stacked">With</ion-label>
-				<ion-input required type="text" value="{{ item.persons }}" [disabled]="!isEdit" name="with"></ion-input>
+
+				<ion-chip *ngFor="let person of item.persons; let index = index" name="with">
+					<ion-label>{{ person }}</ion-label>
+					<ion-icon *ngIf="isEdit" name="close-circle" (click)="deletePerson(person)"></ion-icon>
+				</ion-chip>
+
 			</ion-item>
 
 			<ion-item>
 				<ion-label position="stacked">Topics</ion-label>
-				<ion-input required type="text" value="{{ item.topics }}" [disabled]="!isEdit" name="topics"></ion-input>
+
+				<ion-chip *ngFor="let topic of item.topics; let index = index" name="topics">
+					<ion-label>{{ topic }}</ion-label>
+					<ion-icon name="close-circle" *ngIf="isEdit" ></ion-icon>
+				</ion-chip>
+
 			</ion-item>
 
 			<ion-item>

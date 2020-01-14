@@ -4,9 +4,16 @@
 
 ## TODO
 
+* Edits:
+  * All fields (minus published)
+  * Add createField/updatedField? 
+  * Add ion-chips (add/remove), 
+  * Add URL field,
+* Replace UID by UID generator
 
 * Angular Services, https://angular.io/tutorial/toh-pt4#why-services
 * Reactive state for Angular, https://ngrx.io/
+* Persistence, both on backend as in local storage (see previous ngrx.io)
 
 
 ## References
